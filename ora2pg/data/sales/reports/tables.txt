@@ -1,0 +1,16 @@
+[1] TABLE CUSTOMER (owner: SALES, 1 rows)
+[2] TABLE PRODUCT (owner: SALES, 1 rows)
+[3] TABLE SALES (owner: SALES, 1 rows)
+[4] TABLE SALESITEMS (owner: SALES, 1 rows)
+----------------------------------------------------------
+Total number of rows: 4
+
+Global Temporary Tables:
+
+
+Top 10 of tables sorted by number of rows:
+	[1] TABLE SALES has 1 rows
+	[2] TABLE SALESITEMS has 1 rows
+	[3] TABLE PRODUCT has 1 rows
+	[4] TABLE CUSTOMER has 1 rows
+Top 10 of largest tables:

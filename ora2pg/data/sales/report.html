@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Ora2Pg - Database Migration Report</title>
+  <meta HTTP-EQUIV="Generator" CONTENT="Ora2Pg v23.2">
+  <meta HTTP-EQUIV="Date" CONTENT="Sun Mar  5 21:37:52 2023">
+  <style>
+body {
+	margin: 30px 0;
+	padding: 0;
+	background: #EFEFEF;
+	font-size: 12px;
+	color: #1e1e1e;
+}
+
+h1 {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #DFDFDF;
+	font-size: 22px;
+	padding: 0px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	color: #0094C7;
+}
+
+h2 {
+	margin-bottom: 10px;
+	font-size: 18px;
+	padding: 0px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	color: #0094C7;
+}
+
+#header table {
+	padding: 0 5px 0 5px;
+	border: 1px solid #DBDBDB;
+	margin-bottom: 20px;
+	margin-left: 30px;
+}
+
+#header th {
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+	font-size: 16px;
+	color: #EC5800;
+}
+
+#content table {
+	padding: 0 5px 0 5px;
+	border: 1px solid #DBDBDB;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#content td {
+	padding: 0 5px 0 5px;
+	border-bottom: 1px solid #888888;
+	margin-bottom: 20px;
+	text-align: left;
+	vertical-align: top;
+}
+
+#content th {
+	border-bottom: 1px solid #BBBBBB;
+	padding: 0 5px 0 5px;
+	text-decoration: none;
+	font-size: 16px;
+	color: #EC5800;
+}
+
+.object_name {
+        font-weight: bold;
+        color: #0094C7;
+	text-align: left;
+	white-space: pre;
+}
+
+.detail {
+	white-space: pre;
+}
+
+#footer {
+	margin-right: 10px;
+	text-align: right;
+}
+
+#footer a {
+	color: #EC5800;
+}
+
+#footer a:hover {
+	text-decoration: none;
+}
+  </style>
+</head>
+<body>
+<div id="header">
+<h1>Ora2Pg - Database Migration Report</h1>
+<table>
+<tr><th>Version</th><td>Oracle Database 21c Express Edition Release 21.0.0.0.0</td></tr>
+<tr><th>Schema</th><td></td></tr>
+<tr><th>Size</th><td>0.25 MB</td></tr>
+</table>
+</div>
+<div id="content">
+<table>
+<tr><th>Object</th><th>Number</th><th>Invalid</th><th>Estimated cost</th><th>Comments</th><th>Details</th></tr>
+<tr><td class="object_name">DATABASE LINK</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td style="text-align: center;">0.00</td><td>Database links will be exported as SQL/MED PostgreSQL's Foreign Data Wrapper (FDW) extensions using oracle_fdw.</td><td class="detail"></td></tr>
+<tr><td class="object_name">GLOBAL TEMPORARY TABLE</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td style="text-align: center;">0.00</td><td>Global temporary table are not supported by PostgreSQL and will not be exported. You will have to rewrite some application code to match the PostgreSQL temporary table behavior.</td><td class="detail"></td></tr>
+<tr><td class="object_name">INDEX</td><td style="text-align: center;">1</td><td style="text-align: center;">0</td><td style="text-align: center;">1.00</td><td>0 index(es) are concerned by the export, others are automatically generated and will do so on PostgreSQL. Bitmap will be exported as btree_gin index(es). Domain index are exported as b-tree but commented to be edited to mainly use FTS. Cluster, bitmap join and IOT indexes will not be exported at all. Reverse indexes are not exported too, you may use a trigram-based index (see pg_trgm) or a reverse() function based index and search. Use 'varchar_pattern_ops', 'text_pattern_ops' or 'bpchar_pattern_ops' operators in your indexes to improve search with the LIKE operator respectively into varchar, text or char columns.</td><td class="detail"></td></tr>
+<tr><td class="object_name">JOB</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td style="text-align: center;">0.00</td><td>Job are not exported. You may set external cron job with them.</td><td class="detail"></td></tr>
+<tr><td class="object_name">PROCEDURE</td><td style="text-align: center;">1</td><td style="text-align: center;">0</td><td style="text-align: center;">15.00</td><td>Total size of procedure code: 844 bytes.</td><td class="detail"><details><summary>See details</summary>random_sales: 14<br></details></td></tr>
+<tr><td class="object_name">SYNONYM</td><td style="text-align: center;">0</td><td style="text-align: center;">0</td><td style="text-align: center;">0.00</td><td>SYNONYMs will be exported as views. SYNONYMs do not exists with PostgreSQL but a common workaround is to use views or set the PostgreSQL search_path in your session to access object outside the current schema.</td><td class="detail"></td></tr>
+<tr><td class="object_name">TABLE</td><td style="text-align: center;">4</td><td style="text-align: center;">0</td><td style="text-align: center;">1.00</td><td>
+3 identity column(s).
+ Identity columns are fully supported since PG10.
+</td><td class="detail"><details><summary>See details</summary>Total number of rows: 4<br>Top 10 of tables sorted by number of rows:<br>customer has 1 rows<br>sales has 1 rows<br>salesitems has 1 rows<br>product has 1 rows<br>Top 10 of largest tables:<br></details></td></tr>
+<tr><th style="text-align: center; border-bottom: 0px; vertical-align: bottom;">Total</th><td style="text-align: center; border-bottom: 0px; vertical-align: bottom;">6</td><td style="text-align: center; border-bottom: 0px; vertical-align: bottom;">0</td><td style="text-align: center; border-bottom: 0px; vertical-align: bottom;">17.00</td><td colspan="2" style="border-bottom: 0px; vertical-align: bottom;">17.00 cost migration units means approximatively 1 person-day(s). The migration unit was set to 5 minute(s)
+</td></tr>
+</table>
+</div>
+<h2>Migration level: B-5</h2>
+
+<ul>
+<li>Migration levels:</li>
+  <ul>
+    <li>A - Migration that might be run automatically</li>
+    <li>B - Migration with code rewrite and a human-days cost up to 5 days</li>
+    <li>C - Migration with code rewrite and a human-days cost above 5 days</li>
+  </ul>
+<li>Technical levels:</li>
+  <ul>
+    <li>1 = trivial: no stored functions and no triggers</li>
+    <li>2 = easy: no stored functions but with triggers, no manual rewriting</li>
+    <li>3 = simple: stored functions and/or triggers, no manual rewriting</li>
+    <li>4 = manual: no stored functions but with triggers or views with code rewriting</li>
+    <li>5 = difficult: stored functions and/or triggers with code rewriting</li>
+  </ul>
+</ul>
+<h2>Details of cost assessment per function</h2>
+<details><summary>Show</summary><ul>
+<li>Function random_sales total estimated cost: 14</li>
+<ul>
+<li>DBMS_ => 3 (cost: 3)</li>
+<li>TEST => 2</li>
+<li>ROWNUM => 2 (cost: 1)</li>
+<li>SIZE => 1</li>
+</ul>
+</ul></details>
+
+<div id="footer">
+Generated by <a href="http://ora2pg.darold.net/">Ora2Pg v23.2</a>
+</div>
+</body>
+</html>

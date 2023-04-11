@@ -1,0 +1,47 @@
+@startuml "ER Diagram"
+
+' hide the spot
+hide circle
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity Product {
+  * product_id <<generated>>
+  ---
+  * name
+  * price
+}
+
+entity Customer {
+  * customer_id <<generated>>
+  ---
+  * name
+  * email
+}
+
+
+ entity Sales {
+    * sales_id <<generated>>
+    ---
+    * customer_id <<FK>>
+    * sales_date 
+}
+
+Sales }o-left-|| Customer
+
+
+Entity SalesItems {
+    * sales_id <<FK>>
+    * product_id <<FK>>
+    ---
+    * quantity
+    * price
+}
+
+SalesItems }o--|| Sales
+SalesItems }o-left-|| Product
+
+
+
+
+@enduml

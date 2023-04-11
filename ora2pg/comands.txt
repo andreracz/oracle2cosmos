@@ -1,0 +1,22 @@
+
+
+docker run -it --rm ghcr.io/oracle/oraclelinux8-instantclient:21 sqlplus sales/salessample@//raczora.eastus.azurecontainer.io:1521/XEPDB1
+
+./run-ora2pg.sh --project_base /data/ --init_project sales
+./interactive.sh
+
+export PGPASSWORD=Avanade1234
+./import_all.sh -d citus -o citus -h c.ora2pg.postgres.database.azure.com -U citus
+psql --single-transaction  -h c.ora2pg.postgres.database.azure.com -U citus -d citus -f ./schema/tables/AUTOINCREMENT_table.sql
+
+psql -h c.ora2pg.postgres.database.azure.com -U citus -d citus
+
+
+
+
+
+
+Exportar dados:
+./export_schema.sh
+
+ora2pg -t COPY -o data.sql -b ./data -c ./config/ora2pg.conf
